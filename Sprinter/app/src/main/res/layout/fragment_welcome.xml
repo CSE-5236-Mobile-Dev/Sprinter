@@ -41,7 +41,7 @@
                 android:text="Login"
                 style="@style/txtPlayfairDisplayromansemibold20" tools:text="LOGIN"/>
         </FrameLayout>
-        <FrameLayout android:id="@+id/frameStackellipsetwo"
+        <FrameLayout android:id="@+id/welcomeSignupButton"
             android:layout_gravity="center_horizontal"
             android:layout_height="@dimen/_57pxv"
             android:layout_marginBottom="@dimen/_20pxv"
