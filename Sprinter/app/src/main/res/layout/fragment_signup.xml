@@ -15,7 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_36pxh"
-            android:layout_marginTop="@dimen/_74pxv"
+            android:layout_marginTop="@dimen/_42pxv"
             android:layout_marginEnd="@dimen/_36pxh"
             android:gravity="start"
             android:text="@string/header_sign_up"
@@ -121,7 +121,7 @@
         </FrameLayout>
 
         <FrameLayout
-            android:id="@+id/frameStackellipsetwo"
+            android:id="@+id/signupBackToWelcome"
             android:layout_width="@dimen/_253pxh"
             android:layout_height="@dimen/_57pxv"
             android:layout_gravity="center_horizontal"

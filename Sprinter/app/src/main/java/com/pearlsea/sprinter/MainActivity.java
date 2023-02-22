@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
         signUpFragment = new SignupFragment();
     }
 
-    /* Response to Clicking Signup Button on Welcome Fragment */
-    public void transitionWelcomeToSignup()
+    /* Transition from current active fragment to signup fragment */
+    public void transitionToSignup()
     {
         /* Start A Transaction */
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -54,4 +54,22 @@ public class MainActivity extends AppCompatActivity {
         /* Finish the fragment transaction */
         fragmentTransaction.commit();
     }
+
+    /* Transition from current active fragment to welcome */
+    public void transitionToWelcome()
+    {
+        /* Start A Transaction */
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        /* Replace the Current Fragment with the Signup Fragment */
+        fragmentTransaction.replace(R.id.loginFragmentContainer, welcomeFragment);
+
+        /* Add the old fragment to the back button stack */
+        fragmentTransaction.addToBackStack(null);
+
+        /* Finish the fragment transaction */
+        fragmentTransaction.commit();
+    }
+
+
 }

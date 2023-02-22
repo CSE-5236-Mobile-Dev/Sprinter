@@ -69,7 +69,7 @@ public class WelcomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.transitionWelcomeToSignup();
+                mainActivity.transitionToSignup();
             }
         });
 
