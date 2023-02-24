@@ -28,10 +28,6 @@
         "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\layout\\fragment_signup.xml"
     },
     {
-        "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_fragment_signup.xml.flat",
-        "source": "com.pearlsea.sprinter.app-main-33:/layout/fragment_signup.xml"
-    },
-    {
         "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
         "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
     },
@@ -90,6 +86,10 @@
     {
         "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
         "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_fragment_login.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/layout/fragment_login.xml"
     },
     {
         "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\layout_fragment_welcome.xml.flat",

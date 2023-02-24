@@ -6319,6 +6319,7 @@ int layout design_navigation_menu 0x7f0c0029
 int layout design_navigation_menu_item 0x7f0c002a
 int layout design_text_input_end_icon 0x7f0c002b
 int layout design_text_input_start_icon 0x7f0c002c
+int layout fragment_login 0x7f0c006c
 int layout fragment_signup 0x7f0c002d
 int layout fragment_welcome 0x7f0c002e
 int layout m3_alert_dialog 0x7f0c002f

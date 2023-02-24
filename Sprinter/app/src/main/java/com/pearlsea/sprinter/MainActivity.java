@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("MainActivity", "onCreate Lifecycle Method Triggered");
+
         /* Initialize and show the Main Activity */
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
@@ -37,6 +39,20 @@ public class MainActivity extends AppCompatActivity {
 
         /* Initialize the Signup Fragment */
         signUpFragment = new SignupFragment();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+
+        Log.d("MainActivity", "onPause Lifecycle Method Triggered");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        Log.d("MainActivity", "onResume Lifecycle Method Triggered");
     }
 
     /* Transition from current active fragment to signup fragment */

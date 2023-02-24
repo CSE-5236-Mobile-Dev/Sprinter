@@ -2908,6 +2908,7 @@ id viewEllipseOne
 id viewEllipseTwo
 id welcomeSignupButton
 layout activity_main
+layout fragment_login
 layout fragment_signup
 layout fragment_welcome
 mipmap ic_launcher

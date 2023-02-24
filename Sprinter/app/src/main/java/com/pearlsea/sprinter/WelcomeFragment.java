@@ -50,6 +50,8 @@ public class WelcomeFragment extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        Log.d("WelcomeFragment", "onCreate Lifecycle Method Triggered");
+
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
@@ -60,6 +62,7 @@ public class WelcomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Log.d("WelcomeFragment", "onCreateView Lifecycle Method Triggered");
 
         View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
