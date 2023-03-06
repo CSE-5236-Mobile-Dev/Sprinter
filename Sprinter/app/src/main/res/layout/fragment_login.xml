@@ -2,7 +2,7 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".SignupFragment"
+    tools:context=".LoginFragment"
     >
     <LinearLayout android:id="@+id/linearLoginPage"
         android:layout_height="match_parent"
@@ -18,8 +18,8 @@
             android:layout_marginTop="@dimen/_42pxv"
             android:layout_marginEnd="@dimen/_36pxh"
             android:gravity="start"
-            android:text="Login to Track Your Runs"
-            tools:text="Login to Track Your Runs " />
+            android:text="@string/header_login"
+            tools:text="@string/header_login" />
 
         <TextView
             android:id="@+id/emailLabel"
@@ -94,8 +94,8 @@
                 android:layout_marginBottom="@dimen/_15pxv"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="Login"
-                tools:text="Login" />
+                android:text="LOGIN"
+                tools:text="@string/lbl_login" />
         </FrameLayout>
 
         <FrameLayout
