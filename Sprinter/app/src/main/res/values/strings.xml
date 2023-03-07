@@ -5,6 +5,7 @@
     <string name="no_internet_connection">No internet connection!</string>
     <string name="msg_hello_welcome">Hello! Welcome To Sprinter.</string>
     <string name="lbl_login">       LOGIN</string>
+    <string name="header_login">Login to Track your Runs</string>
     <string name="header_sign_up">Sign Up to Track your Runs</string>
     <string name="lbl_sign_up">SIGN - UP</string>
     <string name="lbl_back">Back</string>
