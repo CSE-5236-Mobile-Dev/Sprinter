@@ -22,6 +22,18 @@
             tools:text="@string/header_sign_up" />
 
         <TextView
+            android:id="@+id/statusMessage"
+            style="@style/txtPlayfairDisplayromansemibold20"
+            android:layout_width="@dimen/_200pxh"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "@dimen/_10pxv"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@android:color/transparent"
+            android:text="Disabled"
+            />
+
+        <TextView
             android:id="@+id/nameLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -109,7 +121,7 @@
                 style="@style/txtPlayfairDisplayromansemibold20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginStart="@dimen/_72pxh"
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_marginEnd="@dimen/_72pxh"
@@ -142,7 +154,7 @@
                 style="@style/txtPlayfairDisplayromansemibold20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginStart="@dimen/_72pxh"
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_marginEnd="@dimen/_72pxh"

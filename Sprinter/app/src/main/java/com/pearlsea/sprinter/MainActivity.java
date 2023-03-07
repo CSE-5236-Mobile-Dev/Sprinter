@@ -6,15 +6,20 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.pearlsea.sprinter.databinding.ActivityMainBinding;
+import com.pearlsea.sprinter.db.DatabaseInstanceSingleton;
+import com.pearlsea.sprinter.db.SprinterDatabase;
+import com.pearlsea.sprinter.db.User;
+import com.pearlsea.sprinter.db.UserDao;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.FrameLayout;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
+    private SprinterDatabase appDatabase;
     private Fragment welcomeFragment;
     private Fragment signUpFragment;
     private FragmentManager fragmentManager;
