@@ -82,6 +82,10 @@ public class User {
     private static final String ENCRYPTION_ALGORITHM = "AES";
     private static final String SECRET_KEY = "mysecretkey12345";
 
+    public User() {
+
+    }
+
     public static String encrypt(String input) throws Exception {
         SecretKeySpec keySpec = new SecretKeySpec(SECRET_KEY.getBytes(), ENCRYPTION_ALGORITHM);
         Cipher cipher = Cipher.getInstance(ENCRYPTION_ALGORITHM);
@@ -93,5 +97,11 @@ public class User {
     @Override
     public String toString() {
         return String.format("UID: %s, Name: %s, E-Mail %s, Password Hash: %s", this.uid, this.name, this.email, this.password);
+    }
+
+    public void setEmail(String email) {
+    }
+
+    public void setPassword(String pass) {
     }
 }
