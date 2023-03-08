@@ -4,7 +4,7 @@
             "outputFile": "com.pearlsea.sprinter.app-mergeDebugResources-29:/values-small-v4/values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\garre\\.gradle\\caches\\transforms-3\\205171a2791eee5a50cb5056a49d0370\\transformed\\material-1.8.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "/Users/selemonbushra/.gradle/caches/transforms-3/205171a2791eee5a50cb5056a49d0370/transformed/material-1.8.0/res/values-small-v4/values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

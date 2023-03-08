@@ -6435,6 +6435,7 @@ string fab_transformation_sheet_behavior
 string form_lbl_email
 string form_lbl_name
 string form_lbl_password
+string header_login
 string header_sign_up
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior

@@ -4,7 +4,7 @@
             "outputFile": "com.pearlsea.sprinter.app-mergeDebugResources-29:/values-ldrtl-v17/values-ldrtl-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\garre\\.gradle\\caches\\transforms-3\\205171a2791eee5a50cb5056a49d0370\\transformed\\material-1.8.0\\res\\values-ldrtl-v17\\values-ldrtl-v17.xml",
+                    "source": "/Users/selemonbushra/.gradle/caches/transforms-3/205171a2791eee5a50cb5056a49d0370/transformed/material-1.8.0/res/values-ldrtl-v17/values-ldrtl-v17.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",

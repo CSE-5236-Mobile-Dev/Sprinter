@@ -2917,6 +2917,7 @@ string app_name
 string form_lbl_email
 string form_lbl_name
 string form_lbl_password
+string header_login
 string header_sign_up
 string hello_blank_fragment
 string lbl_back

@@ -1,106 +1,106 @@
 [
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xxxhdpi\\ic_launcher.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xxxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-anydpi-v26\\ic_launcher.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xxhdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\xml_data_extraction_rules.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\xml\\data_extraction_rules.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_fragment_welcome.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/layout/fragment_welcome.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xxhdpi\\ic_launcher.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_fragment_signup.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/layout/fragment_signup.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\font_playfairdisplayromansemibold.ttf.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\font\\playfairdisplayromansemibold.ttf"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\drawable_background.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\drawable\\background.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/font_playfair_display.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/font/playfair_display.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\layout_fragment_signup.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\layout\\fragment_signup.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/font_playfairdisplayromanbold.ttf.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/font/playfairdisplayromanbold.ttf"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-hdpi\\ic_launcher.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-anydpi-v26/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-anydpi-v33_ic_launcher.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-anydpi-v33\\ic_launcher.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/drawable_background.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/drawable/background.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\font_playfair_display.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\font\\playfair_display.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-hdpi/ic_launcher.webp"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\drawable_ic_launcher_background.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\drawable\\ic_launcher_background.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-anydpi-v33_ic_launcher.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-anydpi-v33/ic_launcher.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\layout_activity_main.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\layout\\activity_main.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/drawable_background2.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/drawable/background2.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-mdpi\\ic_launcher_round.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/drawable_ic_launcher_background.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/drawable/ic_launcher_background.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xxhdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\font_playfairdisplayromanbold.ttf.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\font\\playfairdisplayromanbold.ttf"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-hdpi\\ic_launcher_round.webp"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\drawable_background2.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\drawable\\background2.xml"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\xml_backup_rules.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\xml\\backup_rules.xml"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-mdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xhdpi\\ic_launcher.webp"
-    },
-    {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xhdpi\\ic_launcher_round.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/xml_data_extraction_rules.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/xml/data_extraction_rules.xml"
     },
     {
         "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_fragment_login.xml.flat",
         "source": "com.pearlsea.sprinter.app-main-33:/layout/fragment_login.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\layout_fragment_welcome.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\layout\\fragment_welcome.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-anydpi-v26/ic_launcher_round.xml"
     },
     {
-        "merged": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-merged_res-31:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "C:\\Users\\garre\\.gradle\\daemon\\7.5\\com.pearlsea.sprinter.app-main-33:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xhdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/xml_backup_rules.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/xml/backup_rules.xml"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/font_playfairdisplayromansemibold.ttf.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/font/playfairdisplayromansemibold.ttf"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/layout_activity_main.xml.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "com.pearlsea.sprinter.app-merged_res-31:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "com.pearlsea.sprinter.app-main-33:/mipmap-xxhdpi/ic_launcher_round.webp"
     }
 ]

@@ -4,7 +4,7 @@
             "outputFile": "com.pearlsea.sprinter.app-mergeDebugResources-29:/values-h720dp-v13/values-h720dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\garre\\.gradle\\caches\\transforms-3\\9c5cd562b6a8babf4ea666b86dc1e619\\transformed\\appcompat-1.6.1\\res\\values-h720dp-v13\\values-h720dp-v13.xml",
+                    "source": "/Users/selemonbushra/.gradle/caches/transforms-3/9c5cd562b6a8babf4ea666b86dc1e619/transformed/appcompat-1.6.1/res/values-h720dp-v13/values-h720dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

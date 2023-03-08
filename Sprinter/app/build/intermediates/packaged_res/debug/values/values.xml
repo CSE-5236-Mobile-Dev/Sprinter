@@ -2886,6 +2886,7 @@
     <string name="form_lbl_email">E-Mail</string>
     <string name="form_lbl_name">Name</string>
     <string name="form_lbl_password">Password</string>
+    <string name="header_login">Login to Track your Runs</string>
     <string name="header_sign_up">Sign Up to Track your Runs</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lbl_back">Back</string>
