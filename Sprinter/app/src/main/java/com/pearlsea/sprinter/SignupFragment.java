@@ -8,44 +8,25 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.FrameLayout;
+import android.widget.TextView;
+
+import com.pearlsea.sprinter.db.operation_threads.SignupThread;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SignupFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class SignupFragment extends Fragment {
+public class SignupFragment extends Fragment implements View.OnClickListener {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    EditText name;
+    EditText email;
+    EditText password;
+    TextView status;
 
     public SignupFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment SignupFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static SignupFragment newInstance(String param1, String param2) {
-        SignupFragment fragment = new SignupFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
@@ -53,10 +34,6 @@ public class SignupFragment extends Fragment {
         Log.d("SignupFragment", "onCreate Lifecycle Method Triggered");
 
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
@@ -67,16 +44,51 @@ public class SignupFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_signup, container, false);
 
         FrameLayout signupScreenBackButton = rootView.findViewById(R.id.signupBackToWelcome);
+        signupScreenBackButton.setOnClickListener(this);
+        FrameLayout sigupScreenSignupButton = rootView.findViewById(R.id.signupButton);
+        sigupScreenSignupButton.setOnClickListener(this);
 
-        signupScreenBackButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                MainActivity mainActivity = (MainActivity) getActivity();
-                mainActivity.transitionToWelcome();
-            }
-        });
+        this.name = rootView.findViewById(R.id.nameTextBox);
+        this.email = rootView.findViewById(R.id.emailAddressTextBox);
+        this.password = rootView.findViewById(R.id.passwordTextBox);
+        this.status = rootView.findViewById(R.id.statusMessage);
+        this.ResetStatus();
 
         // Inflate the layout for this fragment
         return rootView;
+    }
+
+    @Override
+    public void onClick(View v) {
+        final int viewId = v.getId();
+        if (viewId == R.id.signupBackToWelcome) handleBackButton();
+        else if (viewId == R.id.signupButton) handleSignup();
+    }
+
+    public void handleBackButton() {
+        MainActivity mainActivity = (MainActivity) getActivity();
+        if (mainActivity != null) mainActivity.transitionToWelcome();
+    }
+
+    public void handleSignup() {
+        String name = this.name.getText().toString();
+        String email = this.email.getText().toString();
+        String password = this.password.getText().toString();
+
+        Log.d("SignupFragment", "Signup Button Triggered");
+
+        if (name.isEmpty() || email.isEmpty() || password.isEmpty()) {
+            // TODO: Do Any Later Required Validation Here
+            return;
+        }
+
+        Log.d("SignupFragment", "Signup Button Triggered");
+        // TODO: Passing the status and colors (needed to not have this message displayed all the time) is super fucking hacky and we really need a view model and live data once group understands code
+        Thread dbOp = new SignupThread(name, email, password, getContext(), this.status);
+        dbOp.start();
+    }
+
+    public void ResetStatus() {
+        this.status.setText("");
     }
 }

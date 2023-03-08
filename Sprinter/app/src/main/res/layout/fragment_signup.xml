@@ -15,11 +15,23 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_36pxh"
-            android:layout_marginTop="@dimen/_42pxv"
+            android:layout_marginTop="@dimen/_30pxv"
             android:layout_marginEnd="@dimen/_36pxh"
             android:gravity="start"
             android:text="@string/header_sign_up"
             tools:text="@string/header_sign_up" />
+
+        <TextView
+            android:id="@+id/statusMessage"
+            style="@style/txtPlayfairDisplayromansemibold20"
+            android:layout_width="@dimen/_200pxh"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "@dimen/_10pxv"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Empty Status"
+            />
 
         <TextView
             android:id="@+id/nameLabel"
@@ -88,7 +100,7 @@
             android:inputType="textPassword" />
 
         <FrameLayout
-            android:id="@+id/frameStackellipseone"
+            android:id="@+id/signupButton"
             android:layout_width="@dimen/_253pxh"
             android:layout_height="@dimen/_57pxv"
             android:layout_gravity="center_horizontal"
@@ -109,7 +121,7 @@
                 style="@style/txtPlayfairDisplayromansemibold20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginStart="@dimen/_72pxh"
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_marginEnd="@dimen/_72pxh"
@@ -142,7 +154,7 @@
                 style="@style/txtPlayfairDisplayromansemibold20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="bottom|start"
+                android:layout_gravity="center_horizontal|center_vertical"
                 android:layout_marginStart="@dimen/_72pxh"
                 android:layout_marginTop="@dimen/_17pxv"
                 android:layout_marginEnd="@dimen/_72pxh"
