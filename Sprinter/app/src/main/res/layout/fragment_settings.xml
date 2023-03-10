@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    style="@style/groupStyledeep_orange_300"
+    android:orientation="vertical"
+    tools:context=".SettingsFragment">
+
+
+    <TextView android:gravity="start"
+        android:id="@+id/txtHelloWelcome"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_36pxh"
+        android:layout_marginStart="@dimen/_36pxh"
+        android:layout_marginTop="@dimen/_74pxv"
+        android:layout_width="match_parent"
+        android:text="Hello! Welcome to Sprinter."
+        style="@style/txtPlayfairDisplayromanbold36" tools:text="@string/settings_title"/>
+
+    <TextView
+        android:id="@+id/metrics_button"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:text="@string/settings_metrics"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        style="@style/txtPlayfairDisplayromansemibold20"
+        />
+
+    <TextView
+        android:id="@+id/set_goals_button"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:text="@string/settings_set_goals"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        style="@style/txtPlayfairDisplayromansemibold20"
+        />
+
+    <TextView
+        android:id="@+id/delete_account_button"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:text="@string/settings_delete_account"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        style="@style/txtPlayfairDisplayromansemibold20"
+        />
+    <TextView
+        android:id="@+id/past_routes_button"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:text="@string/settings_past_routes"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="60dp"
+        style="@style/txtPlayfairDisplayromansemibold20"
+        />
+
+</LinearLayout>
