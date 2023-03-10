@@ -3,6 +3,7 @@ package com.pearlsea.sprinter.db;
 import android.content.Context;
 import android.util.Log;
 
+import androidx.annotation.Nullable;
 import androidx.room.Room;
 
 public class DatabaseInstanceSingleton {
@@ -10,6 +11,9 @@ public class DatabaseInstanceSingleton {
     // Create an instance variable that stores the single instance of the class
     private static DatabaseInstanceSingleton instance;
     private static SprinterDatabase sprinterDatabase;
+
+    @Nullable
+    public static User activeUser = null;
 
     // Make the constructor private so it cannot be called from outside the class
     private DatabaseInstanceSingleton() {}

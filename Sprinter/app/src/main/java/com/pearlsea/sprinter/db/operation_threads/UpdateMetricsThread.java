@@ -47,8 +47,14 @@ public class UpdateMetricsThread extends Thread{
         if (checkIfExist == null) {
             model.setStatus("Error", true);
         } else {
+            // Perform Database Operation
             checkIfExist.updateUser(this.gender, this.age, this.weight, this.height);
             userDao.update(checkIfExist);
+
+            // Set the Active User for Global Referencing
+            DatabaseInstanceSingleton.activeUser = checkIfExist;
+
+            // Set The View's Model
             model.setStatus("completed", false);
         }
     }

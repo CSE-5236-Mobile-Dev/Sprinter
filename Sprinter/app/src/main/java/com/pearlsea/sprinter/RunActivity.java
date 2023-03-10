@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -27,7 +28,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_run);
 
-        settingsFragment = new SettingsFragment();
+        settingsFragment = new SettingsFragment(this);
 
         fragmentManager = getSupportFragmentManager();
 
@@ -50,5 +51,10 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         transaction.addToBackStack(null);
 
         transaction.commit();
+    }
+
+    public void transitionToWelcomeScreen() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
     }
 }
