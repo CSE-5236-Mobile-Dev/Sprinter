@@ -43,10 +43,6 @@ public class SignupThread extends Thread{
         if (checkIfExist == null) {
             userDao.insert(new User(this.name, this.email, this.password));
             this.model.setStatus("User Created!", false);
-            for (User u : userDao.getAll())
-            {
-                Log.d("SignupThread", u.toString());
-            }
         }
         else
         {

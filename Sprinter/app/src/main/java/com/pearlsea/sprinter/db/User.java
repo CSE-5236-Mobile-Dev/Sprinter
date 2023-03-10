@@ -79,6 +79,13 @@ public class User {
         this.height = height;
     }
 
+    public void updateUser(Character gender, Integer age, Integer weight, Integer height) {
+        this.gender = gender;
+        this.age = age;
+        this.weight = weight;
+        this.height = height;
+    }
+
     private static final String ENCRYPTION_ALGORITHM = "AES";
     private static final String SECRET_KEY = "mysecretkey12345";
 

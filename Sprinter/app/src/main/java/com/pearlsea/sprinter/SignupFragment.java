@@ -127,6 +127,11 @@ public class SignupFragment extends Fragment implements View.OnClickListener {
 
     private void updateStatusText(String status) {
         this.status.setText(status);
+
+        if (status.equals("User Created!")) {
+            MainActivity mainActivity = (MainActivity) getActivity();
+            if (mainActivity != null) mainActivity.transitionToMetrics(this.email.getText().toString());
+        }
     }
 
     private void updateStatusColor(boolean isError) {

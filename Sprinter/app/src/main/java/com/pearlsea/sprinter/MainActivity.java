@@ -12,6 +12,7 @@ import com.pearlsea.sprinter.db.User;
 import com.pearlsea.sprinter.db.UserDao;
 
 import android.os.Bundle;
+import android.text.BoringLayout;
 import android.util.Log;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private SprinterDatabase appDatabase;
     private Fragment welcomeFragment;
     private Fragment signUpFragment;
+    private MetricsFragment metricsFragment;
     private FragmentManager fragmentManager;
 
     @Override
@@ -44,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
 
         /* Initialize the Signup Fragment */
         signUpFragment = new SignupFragment();
+
+        /* Initialize the Metrics Fragment */
+        metricsFragment = new MetricsFragment();
     }
 
     @Override
@@ -92,5 +97,25 @@ public class MainActivity extends AppCompatActivity {
         fragmentTransaction.commit();
     }
 
+    public void transitionToMetrics(String email)
+    {
+        this.metricsFragment.setEmail(email);
 
+        /* Start A Transaction */
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        /* Replace the Current Fragment with the Signup Fragment */
+        fragmentTransaction.replace(R.id.loginFragmentContainer, metricsFragment);
+
+        /* Add the old fragment to the back button stack */
+        fragmentTransaction.addToBackStack(null);
+
+        /* Finish the fragment transaction */
+        fragmentTransaction.commit();
+    }
+
+    public void transitionToApp()
+    {
+        Log.d("MainActivity", "Transition to App Called");
+    }
 }
