@@ -11,6 +11,7 @@ import com.pearlsea.sprinter.db.SprinterDatabase;
 import com.pearlsea.sprinter.db.User;
 import com.pearlsea.sprinter.db.UserDao;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.BoringLayout;
 import android.util.Log;
@@ -116,6 +117,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void transitionToApp()
     {
+        Intent intent = new Intent(this, RunActivity.class);
+        startActivity(intent);
+
         Log.d("MainActivity", "Transition to App Called");
     }
 }

@@ -27,4 +27,11 @@
         <item>other</item>
     </string-array>
     <string name="metrics_continue">Finish</string>
+
+    <!-- Settings Fragment -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_metrics">1. Metrics</string>
+    <string name="settings_set_goals">2. Set Goals</string>
+    <string name="settings_delete_account">3. Delete Account</string>
+    <string name="settings_past_routes">4. Past Routes</string>
 </resources>
