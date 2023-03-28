@@ -14,8 +14,6 @@ import android.widget.ImageView;
 
 import com.pearlsea.sprinter.db.SprinterDatabase;
 
-import java.util.Set;
-
 public class RunActivity extends AppCompatActivity implements View.OnClickListener {
 
     public SprinterDatabase appDatabase;
@@ -43,9 +41,10 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         fragmentTransaction.add(R.id.runFragmentContainer, startRunFragment);
         fragmentTransaction.commit();
 
+        /* Create the Fragment for Displaying the Map During Running */
         runningFragment = new RunningFragment();
 
-
+        /* Add a Listener to the Settings Button */
         settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(this);
     }
@@ -55,6 +54,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         if (viewId == settingsButton.getId()) handleSettingsButton();
     }
 
+    //region Fragment / Activity Transitions
     public void handleSettingsButton() {
         Log.d("RunActivity", "Settings Button Triggered");
 
@@ -90,4 +90,5 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
+    //endregion
 }
