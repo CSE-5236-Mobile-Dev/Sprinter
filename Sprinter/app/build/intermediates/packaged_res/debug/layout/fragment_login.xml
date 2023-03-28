@@ -66,7 +66,7 @@
             android:inputType="textPassword" />
 
         <FrameLayout
-            android:id="@+id/frameStackellipseone"
+            android:id="@+id/loginButton"
             android:layout_width="@dimen/_253pxh"
             android:layout_height="@dimen/_57pxv"
             android:layout_gravity="center_horizontal"
@@ -83,7 +83,7 @@
                 android:background="@drawable/background2" />
 
             <TextView
-                android:id="@+id/txtSIGNUP"
+                android:id="@+id/txtLogin"
                 style="@style/txtPlayfairDisplayromansemibold20"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -97,7 +97,6 @@
                 android:text="LOGIN"
                 tools:text="@string/lbl_login" />
         </FrameLayout>
-
         <FrameLayout
             android:id="@+id/signupBackToWelcome"
             android:layout_width="@dimen/_253pxh"

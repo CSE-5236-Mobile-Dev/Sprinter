@@ -24,10 +24,10 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final TextView emailLabel;
 
   @NonNull
-  public final FrameLayout frameStackellipseone;
+  public final LinearLayout linearLoginPage;
 
   @NonNull
-  public final LinearLayout linearLoginPage;
+  public final FrameLayout loginButton;
 
   @NonNull
   public final TextView passwordLabel;
@@ -45,7 +45,7 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final TextView txtHelloWelcome;
 
   @NonNull
-  public final TextView txtSIGNUP;
+  public final TextView txtLogin;
 
   @NonNull
   public final View viewEllipseOne;
@@ -54,21 +54,21 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final View viewEllipseTwo;
 
   protected FragmentLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      EditText emailAddressTextBox, TextView emailLabel, FrameLayout frameStackellipseone,
-      LinearLayout linearLoginPage, TextView passwordLabel, EditText passwordTextBox,
+      EditText emailAddressTextBox, TextView emailLabel, LinearLayout linearLoginPage,
+      FrameLayout loginButton, TextView passwordLabel, EditText passwordTextBox,
       FrameLayout signupBackToWelcome, TextView txtBACK, TextView txtHelloWelcome,
-      TextView txtSIGNUP, View viewEllipseOne, View viewEllipseTwo) {
+      TextView txtLogin, View viewEllipseOne, View viewEllipseTwo) {
     super(_bindingComponent, _root, _localFieldCount);
     this.emailAddressTextBox = emailAddressTextBox;
     this.emailLabel = emailLabel;
-    this.frameStackellipseone = frameStackellipseone;
     this.linearLoginPage = linearLoginPage;
+    this.loginButton = loginButton;
     this.passwordLabel = passwordLabel;
     this.passwordTextBox = passwordTextBox;
     this.signupBackToWelcome = signupBackToWelcome;
     this.txtBACK = txtBACK;
     this.txtHelloWelcome = txtHelloWelcome;
-    this.txtSIGNUP = txtSIGNUP;
+    this.txtLogin = txtLogin;
     this.viewEllipseOne = viewEllipseOne;
     this.viewEllipseTwo = viewEllipseTwo;
   }

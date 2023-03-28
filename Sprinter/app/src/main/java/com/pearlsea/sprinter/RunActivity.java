@@ -1,6 +1,7 @@
 package com.pearlsea.sprinter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -8,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.pearlsea.sprinter.db.SprinterDatabase;
@@ -20,6 +22,9 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     public ImageView settingsButton;
     public FragmentManager fragmentManager;
 
+    Fragment startRunFragment;
+    Button startRunButton;
+
     /* Declare Fragments */
     SettingsFragment settingsFragment;
 
@@ -30,7 +35,13 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
 
         settingsFragment = new SettingsFragment(this);
 
+        /* Add the Start Run Fragment */
         fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        startRunFragment = new StartRunFragment();
+        fragmentTransaction.add(R.id.runFragmentContainer, startRunFragment);
+        fragmentTransaction.commit();
+
 
         settingsButton = findViewById(R.id.settings_button);
         settingsButton.setOnClickListener(this);
@@ -44,13 +55,26 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     public void handleSettingsButton() {
         Log.d("RunActivity", "Settings Button Triggered");
 
+        Fragment activeFragment = fragmentManager.findFragmentById(R.id.runFragmentContainer);
+
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
-        transaction.replace(R.id.runFragmentContainer, settingsFragment);
+        if (activeFragment instanceof SettingsFragment) {
+            // Settings Fragment Currently Active - Go Back to Main Run Fragment
+            transaction.replace(R.id.runFragmentContainer, startRunFragment);
+        }
+        else {
+            // Settings Fragment Not Active - Show Settings Fragment
+            transaction.replace(R.id.runFragmentContainer, settingsFragment);
+        }
 
         transaction.addToBackStack(null);
 
         transaction.commit();
+    }
+
+    public void transitionToRunning() {
+
     }
 
     public void transitionToWelcomeScreen() {

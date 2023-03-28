@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
+    <string-array name="gender_options">
+        <item>female</item>
+        <item>male</item>
+        <item>other</item>
+    </string-array>
     <color name="black">#FF000000</color>
     <color name="black_900">#000000</color>
     <color name="deep_orange_300">#ffa366</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
+    <color name="red">#FF0000</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="white">#FFFFFFFF</color>
@@ -2882,23 +2888,37 @@
     <dimen name="_9pxh">9.0dp</dimen>
     <dimen name="_9pxv">9.0dp</dimen>
     <dimen name="_9sp">9.0sp</dimen>
+    <string name="age">Age: </string>
     <string name="app_name">Sprinter</string>
     <string name="form_lbl_email">E-Mail</string>
     <string name="form_lbl_name">Name</string>
     <string name="form_lbl_password">Password</string>
+    <string name="gender">Gender: </string>
     <string name="header_login">Login to Track your Runs</string>
     <string name="header_sign_up">Sign Up to Track your Runs</string>
+    <string name="height">Height: </string>
+    <string name="height_unit">inches</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="lbl_back">Back</string>
     <string name="lbl_login">       LOGIN</string>
     <string name="lbl_sign_up">SIGN - UP</string>
     <string name="loading">Loading…</string>
+    <string name="metrics_continue">Finish</string>
+    <string name="metrics_title">Let\'s set up your metrics!</string>
     <string name="msg_hello_welcome">Hello! Welcome To Sprinter.</string>
     <string name="no_internet_connection">No internet connection!</string>
-    <style name="Theme.Sprinter" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <string name="settings_delete_account">3. Delete Account</string>
+    <string name="settings_metrics">1. Metrics</string>
+    <string name="settings_past_routes">4. Past Routes</string>
+    <string name="settings_set_goals">2. Set Goals</string>
+    <string name="settings_title">Settings</string>
+    <string name="start_run_START_RUN">START\nRUN!</string>
+    <string name="weight">Weight: </string>
+    <string name="weight_unit">lbs</string>
+    <style name="Theme.Sprinter" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimary">@color/deep_orange_300</item>
+        <item name="colorPrimaryVariant">@color/deep_orange_300</item>
         <item name="colorOnPrimary">@color/white</item>
         
         <item name="colorSecondary">@color/teal_200</item>
@@ -2907,6 +2927,7 @@
         
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         
+        <item name="colorError">@color/red</item>
     </style>
     <style name="groupStyledeep_orange_300">
         <item name="android:background">@drawable/background</item>

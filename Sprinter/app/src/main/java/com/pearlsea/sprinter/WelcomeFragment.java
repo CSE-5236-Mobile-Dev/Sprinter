@@ -66,8 +66,11 @@ public class WelcomeFragment extends Fragment {
 
         View rootView = inflater.inflate(R.layout.fragment_welcome, container, false);
 
+        // Pull Button Objects
         FrameLayout welcomeScreenSignupButton = rootView.findViewById(R.id.welcomeSignupButton);
+        FrameLayout welcomeScreenLoginButton = rootView.findViewById(R.id.welcomeLoginButton);
 
+        // Create Click Listeners for Each Button
         welcomeScreenSignupButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {

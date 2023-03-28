@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:text="Hello! Welcome to Sprinter."
             style="@style/txtPlayfairDisplayromanbold36" tools:text="@string/msg_hello_welcome"/>
-        <FrameLayout android:id="@+id/frameStackellipseone"
+        <FrameLayout android:id="@+id/welcomeLoginButton"
             android:layout_gravity="center_horizontal"
             android:layout_height="@dimen/_57pxv"
             android:layout_marginEnd="@dimen/_36pxh"
