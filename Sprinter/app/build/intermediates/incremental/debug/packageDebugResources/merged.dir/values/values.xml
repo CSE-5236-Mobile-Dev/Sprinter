@@ -2903,6 +2903,7 @@
     <string name="lbl_login">       LOGIN</string>
     <string name="lbl_sign_up">SIGN - UP</string>
     <string name="loading">Loading…</string>
+    <string name="mapbox_access_token">pk.eyJ1Ijoic2F2YWdlZ2FycmV0dCIsImEiOiJjbGNwM3I5N3UxaXA3M25vOG9nam9jcnY1In0.qsfRlFClyb4ktzqN8CsU3Q</string>
     <string name="metrics_continue">Finish</string>
     <string name="metrics_title">Let\'s set up your metrics!</string>
     <string name="msg_hello_welcome">Hello! Welcome To Sprinter.</string>

@@ -74,7 +74,8 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     public void transitionToRunning() {
-
+        Intent intent = new Intent(this, RunningActivity.class);
+        startActivity(intent);
     }
 
     public void transitionToWelcomeScreen() {
