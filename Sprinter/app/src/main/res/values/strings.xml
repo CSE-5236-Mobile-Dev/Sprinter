@@ -45,4 +45,8 @@
 
     <!--  Start Run Fragment  -->
     <string name="start_run_START_RUN">START\nRUN!</string>
+
+    <!--  Running Fragment  -->
+    <string name="running_END_RUN">END\nRUN!</string>
+    <string name="running_title">GREAT JOB!</string>
 </resources>

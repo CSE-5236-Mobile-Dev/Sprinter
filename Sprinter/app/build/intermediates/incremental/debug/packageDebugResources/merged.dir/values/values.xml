@@ -2908,6 +2908,8 @@
     <string name="metrics_title">Let\'s set up your metrics!</string>
     <string name="msg_hello_welcome">Hello! Welcome To Sprinter.</string>
     <string name="no_internet_connection">No internet connection!</string>
+    <string name="running_END_RUN">END\nRUN!</string>
+    <string name="running_title">GREAT JOB!</string>
     <string name="settings_delete_account">3. Delete Account</string>
     <string name="settings_metrics">1. Metrics</string>
     <string name="settings_past_routes">4. Past Routes</string>

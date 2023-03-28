@@ -24,6 +24,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
 
     Fragment startRunFragment;
     Button startRunButton;
+    Fragment runningFragment;
 
     /* Declare Fragments */
     SettingsFragment settingsFragment;
@@ -41,6 +42,8 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         startRunFragment = new StartRunFragment();
         fragmentTransaction.add(R.id.runFragmentContainer, startRunFragment);
         fragmentTransaction.commit();
+
+        runningFragment = new RunningFragment();
 
 
         settingsButton = findViewById(R.id.settings_button);
@@ -74,8 +77,13 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     public void transitionToRunning() {
-        Intent intent = new Intent(this, RunningActivity.class);
-        startActivity(intent);
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+
+        transaction.replace(R.id.runFragmentContainer, runningFragment);
+
+        transaction.addToBackStack(null);
+
+        transaction.commit();
     }
 
     public void transitionToWelcomeScreen() {
