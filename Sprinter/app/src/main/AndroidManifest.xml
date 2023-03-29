@@ -37,6 +37,12 @@
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-    </application>
+
+        <service
+            android:name="RunActivity"
+            android:foregroundServiceType="location">
+        </service>
+
+</application>
 
 </manifest>
