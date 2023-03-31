@@ -4,6 +4,7 @@ import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -24,6 +25,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
 
 import java.sql.Array;
 import java.sql.Time;
@@ -117,43 +119,47 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
     }
     List<RunPoint> currentRun = new ArrayList<RunPoint>();
 
-    private void populateSampleRun() {
-        // Start position
-        LatLng startPosition = new LatLng(37.7749, -122.4194); // San Francisco, CA
-        Date startTime = new Date();
+//    public RunPoint generateSampleRunPoint() {
+//        // Generate a random position within a small radius
+//        double lat = 37.7749 + (Math.random() * 0.01 - 0.005);
+//        double lng = -122.4194 + (Math.random() * 0.01 - 0.005);
+//        LatLng position = new LatLng(lat, lng);
+//
+//        // Generate a random time within the last hour
+//        Date time = new Date(System.currentTimeMillis() - (long) (Math.random() * 60 * 60 * 1000));
+//
+//        // Create and return a new RunPoint
+//        return new RunPoint(position, time);
+//    }
 
-        // Populate the list with sample data
-        for (int i = 0; i < 10; i++) {
-            // Generate a random offset for the position
-            double latOffset = Math.random() * 0.001 - 0.0005;
-            double lngOffset = Math.random() * 0.001 - 0.0005;
+    private LatLng lastPosition = new LatLng(37.7749, -122.4194);
+    private Date lastTime = Calendar.getInstance().getTime();
 
-            // Calculate the new position
-            LatLng newPosition = new LatLng(
-                    startPosition.latitude + latOffset,
-                    startPosition.longitude + lngOffset
-            );
+    public RunPoint generateSampleRunPoint() {
+        // Generate a new position 25 meters from the last position
+        double lat = lastPosition.latitude + (Math.random() * 0.0006 - 0.0003);
+        double lng = lastPosition.longitude + (Math.random() * 0.0006 - 0.0003);
+        LatLng position = new LatLng(lat, lng);
 
-            // Calculate the new time
-            Date newTime = new Date(startTime.getTime() + i * 5000);
+        // Generate a new time 5 seconds after the last time
+        Date time = new Date(lastTime.getTime() + 5000);
 
-            // Create a new RunPoint and add it to the list
-            currentRun.add(new RunPoint(newPosition, newTime));
-        }
+        // Update the last position and time
+        lastPosition = position;
+        lastTime = time;
+
+        // Create and return a new RunPoint
+        return new RunPoint(position, time);
     }
 
     private boolean useSampleData = true;
     private RunActivity parentActivity;
-    private int sampleIndex = 0;
     private RunPoint retrieveLocation() {
         if (useSampleData) {
             /* Send out a stream of sample data for easier debugging */
-            if (currentRun.size() == 0) populateSampleRun();
-            if (sampleIndex < currentRun.size()) {
-                RunPoint current = currentRun.get(sampleIndex);
-                sampleIndex++;
-                return current;
-            }
+            RunPoint r = generateSampleRunPoint();
+            currentRun.add(r);
+            return r;
 
         }
         else {
@@ -180,7 +186,17 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
         return new RunPoint(new LatLng(0,0), Calendar.getInstance().getTime());
     }
 
-    private void createPolyLine() {
+    private PolylineOptions constructCurrentPolyline() {
+        PolylineOptions options = new PolylineOptions()
+                .clickable(false)
+                .color(Color.parseColor("#ffa366"))
+                .width(10);
+
+        for (RunPoint r : currentRun) {
+            options.add(r.position);
+        }
+
+        return options;
     }
 
     //endregion
@@ -209,6 +225,7 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
             /* Clear Map then Update Current Position and Polyline */
             mMap.clear();
             mMap.addMarker(m);
+            Polyline p = mMap.addPolyline(constructCurrentPolyline());
 
             handler.postDelayed(this, 5000); // Call this runnable again after 5 seconds
         }
