@@ -2,16 +2,10 @@ package com.pearlsea.sprinter;
 
 import static androidx.core.content.ContextCompat.getSystemService;
 
-import android.annotation.SuppressLint;
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.location.Location;
-import android.location.LocationManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -19,18 +13,26 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-
-import android.Manifest.permission;
-
-import com.google.android.gms.maps.CameraUpdate;
+import com.google.android.gms.common.internal.zzag;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+
+import java.sql.Array;
+import java.sql.Time;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
 
 public class RunningFragment extends Fragment implements OnMapReadyCallback {
 
@@ -71,10 +73,12 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
     }
 
     boolean mapReady = false;
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
         mapReady = true;
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         // Add a marker in Sydney and move the camera
 //        LatLng sydney = new LatLng(-34, 151);
@@ -88,24 +92,123 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
         startLocationGathering();
     }
 
-    //region Handle Map Updates
+    //region Map Helpers
+    BitmapDescriptor locationIcon;
+
+    BitmapDescriptor getLocationIcon() {
+        if (locationIcon != null) {
+            return locationIcon;
+        } else {
+            Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.mapmarker);
+            Bitmap scaledBitmap = Bitmap.createScaledBitmap(bitmap, 50, 50, false);
+            locationIcon = BitmapDescriptorFactory.fromBitmap(scaledBitmap);
+            return locationIcon;
+        }
+    }
+
+    public class RunPoint {
+        public LatLng position;
+        public Date time;
+
+        public RunPoint(LatLng position, Date time) {
+            this.position = position;
+            this.time = time;
+        }
+    }
+    List<RunPoint> currentRun = new ArrayList<RunPoint>();
+
+    private void populateSampleRun() {
+        // Start position
+        LatLng startPosition = new LatLng(37.7749, -122.4194); // San Francisco, CA
+        Date startTime = new Date();
+
+        // Populate the list with sample data
+        for (int i = 0; i < 10; i++) {
+            // Generate a random offset for the position
+            double latOffset = Math.random() * 0.001 - 0.0005;
+            double lngOffset = Math.random() * 0.001 - 0.0005;
+
+            // Calculate the new position
+            LatLng newPosition = new LatLng(
+                    startPosition.latitude + latOffset,
+                    startPosition.longitude + lngOffset
+            );
+
+            // Calculate the new time
+            Date newTime = new Date(startTime.getTime() + i * 5000);
+
+            // Create a new RunPoint and add it to the list
+            currentRun.add(new RunPoint(newPosition, newTime));
+        }
+    }
+
+    private boolean useSampleData = true;
     private RunActivity parentActivity;
+    private int sampleIndex = 0;
+    private RunPoint retrieveLocation() {
+        if (useSampleData) {
+            /* Send out a stream of sample data for easier debugging */
+            if (currentRun.size() == 0) populateSampleRun();
+            if (sampleIndex < currentRun.size()) {
+                RunPoint current = currentRun.get(sampleIndex);
+                sampleIndex++;
+                return current;
+            }
+
+        }
+        else {
+            /* Use Device Location for Real Simulation */
+
+            parentActivity = (RunActivity) getActivity();
+            if (parentActivity != null) {
+                parentActivity.getLastLocation();
+                double latitude = parentActivity.latitude;
+                double longitude = parentActivity.longitude;
+                LatLng latestPosition = new LatLng(latitude, longitude);
+
+                RunPoint location = new RunPoint(latestPosition, Calendar.getInstance().getTime());
+
+                /* Add Location to the Run */
+                currentRun.add(location);
+
+                return location;
+            }
+        }
+
+        // out of places or error - send 0,0
+        // TODO: end run if this point is reached
+        return new RunPoint(new LatLng(0,0), Calendar.getInstance().getTime());
+    }
+
+    private void createPolyLine() {
+    }
+
+    //endregion
+
+    //region Handle Map Updates
+
     private Handler handler = new Handler();
 
     /* Grab Location Data Every 5 Seconds */
     private Runnable runnable = new Runnable() {
         @Override
         public void run() {
-            // Set the Parent Activity
-            parentActivity = (RunActivity) getActivity();
 
-            if (parentActivity != null) {
-                parentActivity.getLastLocation();
-                double latitude = parentActivity.latitude;
-                double longitude = parentActivity.longitude;
+            /* Retrieve Location */
+            RunPoint location = retrieveLocation();
 
-                Log.d("RunningFragment", latitude + " " + longitude);
-            }
+            /* Log Location */
+            Log.d("RunningFragment", location.position.latitude + " " + location.position.longitude);
+
+            /* Move Camera to Latest Position and Create a Marker */
+            MarkerOptions m = new MarkerOptions();
+            m.icon(getLocationIcon()); // Needs Bitmap Descriptor
+            m.position(location.position);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location.position, 18));
+
+            /* Clear Map then Update Current Position and Polyline */
+            mMap.clear();
+            mMap.addMarker(m);
 
             handler.postDelayed(this, 5000); // Call this runnable again after 5 seconds
         }
@@ -119,6 +222,8 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
         super.onResume();
         if (isRunning) {
             handler.postDelayed(runnable, 5000); // Call the runnable for the first time
+        } else {
+            startLocationGathering();
         }
     }
 
