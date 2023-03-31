@@ -4,8 +4,8 @@ import android.content.Context;
 
 import com.pearlsea.sprinter.db.DatabaseInstanceSingleton;
 import com.pearlsea.sprinter.db.SprinterDatabase;
-import com.pearlsea.sprinter.db.User;
-import com.pearlsea.sprinter.db.UserDao;
+import com.pearlsea.sprinter.db.User.User;
+import com.pearlsea.sprinter.db.User.UserDao;
 import com.pearlsea.sprinter.mvvm.MetricsViewModel;
 
 public class UpdateMetricsThread extends Thread{

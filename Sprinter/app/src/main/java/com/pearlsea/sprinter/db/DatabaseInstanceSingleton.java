@@ -6,6 +6,8 @@ import android.util.Log;
 import androidx.annotation.Nullable;
 import androidx.room.Room;
 
+import com.pearlsea.sprinter.db.User.User;
+
 public class DatabaseInstanceSingleton {
 
     // Create an instance variable that stores the single instance of the class
