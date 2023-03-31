@@ -31,6 +31,8 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.pearlsea.sprinter.db.SprinterDatabase;
 
+import java.util.List;
+
 public class RunActivity extends AppCompatActivity implements View.OnClickListener {
 
     public SprinterDatabase appDatabase;
@@ -83,6 +85,16 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         if (viewId == settingsButton.getId()) handleSettingsButton();
     }
 
+    public void endRun(List<RunningFragment.RunPoint> run) {
+        for (RunningFragment.RunPoint r : run) {
+            Log.d("EndRun", r.toString());
+        }
+
+        // Store Run to the Database
+
+        // Transition to the run summary screen.
+    }
+
     //region Fragment / Activity Transitions
     public void handleSettingsButton() {
         Log.d("RunActivity", "Settings Button Triggered");
@@ -118,6 +130,10 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     public void transitionToWelcomeScreen() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+    }
+
+    public void transitionToSummaryScreen() {
+
     }
     //endregion
 

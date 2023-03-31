@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import com.google.android.gms.common.internal.zzag;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -33,7 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class RunningFragment extends Fragment implements OnMapReadyCallback {
+public class RunningFragment extends Fragment implements OnMapReadyCallback, View.OnClickListener {
 
     private GoogleMap mMap;
 
@@ -68,7 +69,25 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
         SupportMapFragment mapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.mapContainer);
         mapFragment.getMapAsync(this);
 
+        Button endButton = rootView.findViewById(R.id.endButton);
+        endButton.setOnClickListener(this);
+
         return rootView;
+    }
+
+    @Override
+    public void onClick(View v) {
+        final int viewId = v.getId();
+        if (viewId == R.id.endButton) handleEndRun();
+    }
+
+    public void handleEndRun() {
+        // Stop Gathering Location
+        this.stopLocationGathering();
+
+        // Get the parent activity and call a transition
+        RunActivity parentActivity = (RunActivity) getActivity();
+        parentActivity.endRun(currentRun);
     }
 
     boolean mapReady = false;
@@ -78,15 +97,6 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
         mapReady = true;
         mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-
-        // Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(-34, 151);
-//        mMap.addMarker(new MarkerOptions()
-//                .position(sydney)
-//                .title("Marker in Sydney"));
-//        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 18));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
         startLocationGathering();
     }
@@ -113,21 +123,13 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
             this.position = position;
             this.time = time;
         }
+
+        @Override
+        public String toString() {
+            return this.position.toString();
+        }
     }
     List<RunPoint> currentRun = new ArrayList<RunPoint>();
-
-//    public RunPoint generateSampleRunPoint() {
-//        // Generate a random position within a small radius
-//        double lat = 37.7749 + (Math.random() * 0.01 - 0.005);
-//        double lng = -122.4194 + (Math.random() * 0.01 - 0.005);
-//        LatLng position = new LatLng(lat, lng);
-//
-//        // Generate a random time within the last hour
-//        Date time = new Date(System.currentTimeMillis() - (long) (Math.random() * 60 * 60 * 1000));
-//
-//        // Create and return a new RunPoint
-//        return new RunPoint(position, time);
-//    }
 
     private LatLng lastPosition = new LatLng(37.7749, -122.4194);
     private Date lastTime = Calendar.getInstance().getTime();
@@ -178,8 +180,7 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
             }
         }
 
-        // out of places or error - send 0,0
-        // TODO: end run if this point is reached
+        // Shouldn't Reach this Point, but Null Safety is Important
         return new RunPoint(new LatLng(0,0), Calendar.getInstance().getTime());
     }
 

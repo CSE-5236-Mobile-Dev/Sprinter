@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.pearlsea.sprinter.app-mergeDebugResources-35:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "com.pearlsea.sprinter.app-mergeDebugResources-36:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
                     "source": "/home/garrett/.gradle/caches/transforms-3/1ebccf675c7b200753ba2cb292854e44/transformed/material-1.8.0/res/values-w360dp-port-v13/values-w360dp-port-v13.xml",
