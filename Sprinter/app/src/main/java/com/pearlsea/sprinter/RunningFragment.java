@@ -26,11 +26,8 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.maps.android.SphericalUtil;
 
-import java.sql.Array;
-import java.sql.Time;
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -226,6 +223,9 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback {
             mMap.clear();
             mMap.addMarker(m);
             Polyline p = mMap.addPolyline(constructCurrentPolyline());
+            double polylineLength = SphericalUtil.computeLength(p.getPoints());
+            Log.d("RunningFragment", "Traveled: " + polylineLength + " meters.");
+            Log.d("RunningFragment", "Traveled: " + polylineLength / 1609.344 + " miles.");
 
             handler.postDelayed(this, 5000); // Call this runnable again after 5 seconds
         }
