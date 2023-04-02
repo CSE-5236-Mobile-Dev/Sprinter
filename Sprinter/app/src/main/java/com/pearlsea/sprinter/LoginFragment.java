@@ -82,14 +82,14 @@ public class LoginFragment extends Fragment implements View.OnClickListenert {
         String email = this.email.getText().toString();
         String password = this.password.getText().toString();
 
-        Log.d("SignupFragment", "Signup Button Triggered");
+        Log.d("LoginFragment", "Login Button Triggered");
 
         if (email.isEmpty() || password.isEmpty()) {
             // TODO: Do Any Later Required Validation Here
             return;
         }
 
-        Log.d("SignupFragment", "Signup Button Triggered");
+        Log.d("LoginFragment", "Login Button Triggered");
 
         Thread dbOp = new loginThread(email, password, getContext(), loginModel);
         dbOp.start();
