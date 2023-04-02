@@ -27,6 +27,9 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final LinearLayout linearLoginPage;
 
   @NonNull
+  public final FrameLayout loginBackToWelcome;
+
+  @NonNull
   public final FrameLayout loginButton;
 
   @NonNull
@@ -36,7 +39,7 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
   public final EditText passwordTextBox;
 
   @NonNull
-  public final FrameLayout signupBackToWelcome;
+  public final TextView statusMessage;
 
   @NonNull
   public final TextView txtBACK;
@@ -55,17 +58,18 @@ public abstract class FragmentLoginBinding extends ViewDataBinding {
 
   protected FragmentLoginBinding(Object _bindingComponent, View _root, int _localFieldCount,
       EditText emailAddressTextBox, TextView emailLabel, LinearLayout linearLoginPage,
-      FrameLayout loginButton, TextView passwordLabel, EditText passwordTextBox,
-      FrameLayout signupBackToWelcome, TextView txtBACK, TextView txtHelloWelcome,
+      FrameLayout loginBackToWelcome, FrameLayout loginButton, TextView passwordLabel,
+      EditText passwordTextBox, TextView statusMessage, TextView txtBACK, TextView txtHelloWelcome,
       TextView txtLogin, View viewEllipseOne, View viewEllipseTwo) {
     super(_bindingComponent, _root, _localFieldCount);
     this.emailAddressTextBox = emailAddressTextBox;
     this.emailLabel = emailLabel;
     this.linearLoginPage = linearLoginPage;
+    this.loginBackToWelcome = loginBackToWelcome;
     this.loginButton = loginButton;
     this.passwordLabel = passwordLabel;
     this.passwordTextBox = passwordTextBox;
-    this.signupBackToWelcome = signupBackToWelcome;
+    this.statusMessage = statusMessage;
     this.txtBACK = txtBACK;
     this.txtHelloWelcome = txtHelloWelcome;
     this.txtLogin = txtLogin;

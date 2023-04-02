@@ -20,7 +20,17 @@
             android:gravity="start"
             android:text="@string/header_login"
             tools:text="@string/header_login" />
-
+        <TextView
+            android:id="@+id/statusMessage"
+            style="@style/txtPlayfairDisplayromansemibold20"
+            android:layout_width="@dimen/_200pxh"
+            android:layout_height="wrap_content"
+            android:layout_marginTop = "@dimen/_10pxv"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:text="Empty Status"
+            />
         <TextView
             android:id="@+id/emailLabel"
             android:layout_width="wrap_content"
@@ -98,7 +108,7 @@
                 tools:text="@string/lbl_login" />
         </FrameLayout>
         <FrameLayout
-            android:id="@+id/signupBackToWelcome"
+            android:id="@+id/loginBackToWelcome"
             android:layout_width="@dimen/_253pxh"
             android:layout_height="@dimen/_57pxv"
             android:layout_gravity="center_horizontal"
