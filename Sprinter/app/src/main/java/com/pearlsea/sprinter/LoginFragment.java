@@ -22,7 +22,7 @@ import com.pearlsea.sprinter.mvvm.LoginViewModel;
  * A simple {@link Fragment} subclass.
  * create an instance of this fragment.
  */
-public class LoginFragment extends Fragment implements View.OnClickListenert {
+public class LoginFragment extends Fragment implements View.OnClickListener {
     EditText email;
     EditText password;
     TextView status;
