@@ -54,7 +54,7 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
         this.email = rootView.findViewById(R.id.emailAddressTextBox);
         this.password = rootView.findViewById(R.id.passwordTextBox);
         this.status = rootView.findViewById(R.id.statusMessage);
-        //this.ResetStatus();
+
 
         /* Setup View Model */
         this.initializeViewModel();
