@@ -6,17 +6,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.pearlsea.sprinter.databinding.ActivityMainBinding;
-import com.pearlsea.sprinter.db.DatabaseInstanceSingleton;
 import com.pearlsea.sprinter.db.SprinterDatabase;
-import com.pearlsea.sprinter.db.User;
-import com.pearlsea.sprinter.db.UserDao;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.BoringLayout;
 import android.util.Log;
-
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

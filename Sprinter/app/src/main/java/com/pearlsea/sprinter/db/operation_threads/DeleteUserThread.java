@@ -3,7 +3,6 @@ package com.pearlsea.sprinter.db.operation_threads;
 import android.content.Context;
 
 import com.pearlsea.sprinter.RunActivity;
-import com.pearlsea.sprinter.SettingsFragment;
 import com.pearlsea.sprinter.db.DatabaseInstanceSingleton;
 import com.pearlsea.sprinter.db.SprinterDatabase;
 import com.pearlsea.sprinter.db.User;

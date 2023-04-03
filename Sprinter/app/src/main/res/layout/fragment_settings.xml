@@ -38,7 +38,7 @@
         android:textSize="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         style="@style/txtPlayfairDisplayromansemibold20"
         />
 
@@ -50,7 +50,7 @@
         android:textSize="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         style="@style/txtPlayfairDisplayromansemibold20"
         />
     <TextView
@@ -61,7 +61,19 @@
         android:textSize="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
+        style="@style/txtPlayfairDisplayromansemibold20"
+        />
+
+    <TextView
+        android:id="@+id/logout_button"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:text="@string/settings_logout"
+        android:textSize="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
         style="@style/txtPlayfairDisplayromansemibold20"
         />
 

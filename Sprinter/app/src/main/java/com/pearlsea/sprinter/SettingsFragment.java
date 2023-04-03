@@ -1,21 +1,16 @@
 package com.pearlsea.sprinter;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelStoreOwner;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 
 import com.pearlsea.sprinter.db.DatabaseInstanceSingleton;
 import com.pearlsea.sprinter.db.operation_threads.DeleteUserThread;
-import com.pearlsea.sprinter.mvvm.MetricsViewModel;
 
 public class SettingsFragment extends Fragment implements View.OnClickListener {
 
