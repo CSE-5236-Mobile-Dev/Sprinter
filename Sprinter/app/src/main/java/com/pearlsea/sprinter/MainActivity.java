@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private SprinterDatabase appDatabase;
     private Fragment welcomeFragment;
     private Fragment signUpFragment;
+    private Fragment loginFragment;
     private MetricsFragment metricsFragment;
     private FragmentManager fragmentManager;
 
@@ -50,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
 
         /* Initialize the Metrics Fragment */
         metricsFragment = new MetricsFragment();
+
+        loginFragment = new LoginFragment();
     }
 
     @Override
@@ -64,6 +67,13 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         Log.d("MainActivity", "onResume Lifecycle Method Triggered");
+    }
+
+    public void transitionToLogin() {
+        fragmentManager.beginTransaction()
+                .replace(R.id.loginFragmentContainer, loginFragment)
+                .addToBackStack(null)
+                .commit();
     }
 
     /* Transition from current active fragment to signup fragment */

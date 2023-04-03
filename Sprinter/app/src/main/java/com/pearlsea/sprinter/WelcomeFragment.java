@@ -79,6 +79,14 @@ public class WelcomeFragment extends Fragment {
             }
         });
 
+        welcomeScreenLoginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity mainActivity = (MainActivity) getActivity();
+                mainActivity.transitionToLogin();
+            }
+        });
+
         // Inflate the layout for this fragment
         return rootView;
     }

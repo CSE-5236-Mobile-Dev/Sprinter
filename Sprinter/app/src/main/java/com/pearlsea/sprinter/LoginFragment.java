@@ -115,9 +115,9 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     private void updateStatusText(String status) {
         this.status.setText(status);
 
-        if (status.equals("User Logedin!")) {
+        if (status.equals("Login Success")) {
             MainActivity mainActivity = (MainActivity) getActivity();
-            if (mainActivity != null) mainActivity.transitionToMetrics(this.email.getText().toString());
+            if (mainActivity != null) mainActivity.transitionToApp();
         }
     }
     private void updateStatusColor(boolean isError) {

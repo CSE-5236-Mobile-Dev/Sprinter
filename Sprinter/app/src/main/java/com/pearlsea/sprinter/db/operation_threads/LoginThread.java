@@ -39,13 +39,13 @@ public class LoginThread extends Thread{
 
         // No User Currently Exists
         if (checkIfExist == null) {
-            userDao.insert(new User(this.email, this.password));
-            this.model.setStatus("User Existed!", false);
+            this.model.setStatus("No User Exists", true);
         }
         else
         {
-            // User already exists - post error to UI
-            this.model.setStatus("Error Duplicate User", true);
+            DatabaseInstanceSingleton.activeUser = checkIfExist;
+            // User already exists - log them in
+            this.model.setStatus("Login Success", false);
         }
 
         Log.d("LoginThread", "DB Operation Completed");
