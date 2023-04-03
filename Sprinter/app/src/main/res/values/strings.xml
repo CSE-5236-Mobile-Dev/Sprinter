@@ -37,6 +37,7 @@
     <string name="settings_set_goals">2. Set Goals</string>
     <string name="settings_delete_account">3. Delete Account</string>
     <string name="settings_past_routes">4. Past Routes</string>
+    <string name="settings_logout">5. Logout</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
@@ -46,4 +47,9 @@
     <!--  Running Fragment  -->
     <string name="running_END_RUN">END\nRUN!</string>
     <string name="running_title">GREAT JOB!</string>
+
+    <!--  Summary Fragment  -->
+    <string name="summary_title">SUMMARY!</string>
+    <string name="summary_distance">Distance: </string>
+    <string name="summary_time">Time: </string>
 </resources>

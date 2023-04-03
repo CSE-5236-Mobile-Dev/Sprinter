@@ -45,6 +45,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
 
     /* Declare Fragments */
     SettingsFragment settingsFragment;
+    Fragment summaryFragment;
 
     // initializing
     // FusedLocationProviderClient
@@ -93,12 +94,22 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         // Store Run to the Database
 
         // Transition to the run summary screen.
+        // TODO: Use Database instead of injecting into fragment
+        summaryFragment = new SummaryFragment(run);
+
+        fragmentManager.beginTransaction()
+                .replace(R.id.runFragmentContainer, summaryFragment)
+                .addToBackStack(null)
+                .commit();
+
+
     }
 
     //region Fragment / Activity Transitions
     public void handleSettingsButton() {
         Log.d("RunActivity", "Settings Button Triggered");
 
+        // TODO: store a member variable to contain active fragment - this code will revert to the wrong screen
         Fragment activeFragment = fragmentManager.findFragmentById(R.id.runFragmentContainer);
 
         FragmentTransaction transaction = fragmentManager.beginTransaction();
