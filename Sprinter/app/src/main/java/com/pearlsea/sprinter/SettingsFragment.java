@@ -33,6 +33,8 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
 
         TextView deleteButton = rootView.findViewById(R.id.delete_account_button);
         deleteButton.setOnClickListener(this);
+        TextView logoutButton = rootView.findViewById(R.id.logout_button);
+        logoutButton.setOnClickListener(this);
 
 
         return rootView;
@@ -42,10 +44,17 @@ public class SettingsFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         final int viewId = v.getId();
         if (viewId == R.id.delete_account_button) handle_account_deletion();
+        if (viewId == R.id.logout_button) handle_account_logout();
     }
 
     private void handle_account_deletion() {
         Thread deleteUser = new DeleteUserThread(DatabaseInstanceSingleton.activeUser, getContext(), callingActivity);
         deleteUser.start();
+    }
+
+    private void handle_account_logout() {
+        DatabaseInstanceSingleton.activeUser = null;
+        RunActivity parentActivity = (RunActivity) getActivity();
+        parentActivity.transitionToWelcomeScreen();
     }
 }

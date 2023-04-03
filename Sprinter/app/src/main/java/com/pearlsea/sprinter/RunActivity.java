@@ -65,6 +65,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         startRunFragment = new StartRunFragment();
+        lastFragment = startRunFragment;
         fragmentTransaction.add(R.id.runFragmentContainer, startRunFragment);
         fragmentTransaction.commit();
 
@@ -96,6 +97,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         // Transition to the run summary screen.
         // TODO: Use Database instead of injecting into fragment
         summaryFragment = new SummaryFragment(run);
+        lastFragment = summaryFragment;
 
         fragmentManager.beginTransaction()
                 .replace(R.id.runFragmentContainer, summaryFragment)
@@ -106,6 +108,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
     }
 
     //region Fragment / Activity Transitions
+    private Fragment lastFragment;
     public void handleSettingsButton() {
         Log.d("RunActivity", "Settings Button Triggered");
 
@@ -116,7 +119,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
 
         if (activeFragment instanceof SettingsFragment) {
             // Settings Fragment Currently Active - Go Back to Main Run Fragment
-            transaction.replace(R.id.runFragmentContainer, startRunFragment);
+            transaction.replace(R.id.runFragmentContainer, lastFragment);
         }
         else {
             // Settings Fragment Not Active - Show Settings Fragment
@@ -132,6 +135,7 @@ public class RunActivity extends AppCompatActivity implements View.OnClickListen
         FragmentTransaction transaction = fragmentManager.beginTransaction();
 
         transaction.replace(R.id.runFragmentContainer, runningFragment);
+        lastFragment = runningFragment;
 
         transaction.addToBackStack(null);
 
