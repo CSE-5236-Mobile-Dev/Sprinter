@@ -1,4 +1,4 @@
-package com.pearlsea.sprinter.db.Run;
+package com.pearlsea.sprinter.db;
 
 import androidx.room.Dao;
 

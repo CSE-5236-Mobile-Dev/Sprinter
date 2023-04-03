@@ -1,4 +1,4 @@
-package com.pearlsea.sprinter.db.User;
+package com.pearlsea.sprinter.db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

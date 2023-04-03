@@ -1,4 +1,4 @@
-package com.pearlsea.sprinter.db.User;
+package com.pearlsea.sprinter.db;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.room.ColumnInfo;

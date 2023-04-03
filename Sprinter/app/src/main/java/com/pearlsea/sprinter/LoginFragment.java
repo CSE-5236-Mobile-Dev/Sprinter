@@ -10,7 +10,7 @@ import android.widget.EditText;
 import android.content.Context;
 import android.widget.Button;
 import android.widget.Toast;
-import com.pearlsea.sprinter.db.User.User;
+import com.pearlsea.sprinter.db.User;
 
 /**
  * A simple {@link Fragment} subclass.
