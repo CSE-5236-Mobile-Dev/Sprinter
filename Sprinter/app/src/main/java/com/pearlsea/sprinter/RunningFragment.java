@@ -151,7 +151,7 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
         return new RunPoint(position, time);
     }
 
-    private boolean useSampleData = false;
+    private boolean useSampleData = true;
     private RunActivity parentActivity;
     private RunPoint retrieveLocation() {
         if (useSampleData) {
