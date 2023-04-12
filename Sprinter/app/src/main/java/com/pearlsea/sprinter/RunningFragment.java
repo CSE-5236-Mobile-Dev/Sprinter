@@ -24,6 +24,7 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
@@ -131,6 +132,16 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
     }
     List<RunPoint> currentRun = new ArrayList<RunPoint>();
 
+    List<LatLng> getPoints() {
+        List<LatLng> points = new ArrayList<>();
+
+        for (RunPoint r : currentRun) {
+            points.add(r.position);
+        }
+
+        return points;
+    }
+
     private LatLng lastPosition = new LatLng(37.7749, -122.4194);
     private Date lastTime = Calendar.getInstance().getTime();
 
@@ -190,9 +201,9 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
                 .color(Color.parseColor("#ffa366"))
                 .width(10);
 
-        for (RunPoint r : currentRun) {
-            options.add(r.position);
-        }
+//        for (RunPoint r : currentRun) {
+//            options.add(r.position);
+//        }
 
         return options;
     }
@@ -202,6 +213,8 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
     //region Handle Map Updates
 
     private Handler handler = new Handler();
+    Marker mapMarker;
+    Polyline runLine;
 
     /* Grab Location Data Every 5 Seconds */
     private Runnable runnable = new Runnable() {
@@ -214,17 +227,28 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
             /* Log Location */
             Log.d("RunningFragment", location.position.latitude + " " + location.position.longitude);
 
-            /* Move Camera to Latest Position and Create a Marker */
-            MarkerOptions m = new MarkerOptions();
-            m.icon(getLocationIcon()); // Needs Bitmap Descriptor
-            m.position(location.position);
+            /* Update Current Position and Polyline */
+            //mMap.clear();
+            if (mapMarker == null) {
+                /* Move Camera to Latest Position and Create a Marker */
+                MarkerOptions m = new MarkerOptions();
+                m.icon(getLocationIcon()); // Needs Bitmap Descriptor
+                m.position(location.position);
+                mapMarker = mMap.addMarker(m);
+            } else {
+                mapMarker.setPosition(location.position);
+            }
+
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location.position, 18));
 
-            /* Clear Map then Update Current Position and Polyline */
-            mMap.clear();
-            mMap.addMarker(m);
-            Polyline p = mMap.addPolyline(constructCurrentPolyline());
-            double polylineLength = SphericalUtil.computeLength(p.getPoints());
+            if (runLine == null) {
+                runLine = mMap.addPolyline(constructCurrentPolyline());
+                runLine.setPoints(getPoints());
+            } else {
+                runLine.setPoints(getPoints());
+            }
+
+            double polylineLength = SphericalUtil.computeLength(runLine.getPoints());
             Log.d("RunningFragment", "Traveled: " + polylineLength + " meters.");
             Log.d("RunningFragment", "Traveled: " + polylineLength / 1609.344 + " miles.");
 
