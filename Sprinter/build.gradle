@@ -20,3 +20,10 @@ dependencies {
     // AndroidX JUnit extensions for UI testing
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 }
+
+// Configure test runner to enable androidx test rules
+android {
+    defaultConfig {
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
