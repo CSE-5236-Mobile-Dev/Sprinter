@@ -4,26 +4,3 @@ plugins {
     id 'com.android.library' version '7.4.0-rc03' apply false
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin' version '2.0.1' apply false
 }
-
-dependencies {
-    // JUnit for Android
-    testImplementation 'junit:junit:4.13.2'
-
-    // Mockito for mocking dependencies
-    testImplementation 'org.mockito:mockito-core:3.11.2'
-
-    // AndroidX Test libraries
-    androidTestImplementation 'androidx.test:core:1.4.0'
-    androidTestImplementation 'androidx.test:runner:1.4.0'
-    androidTestImplementation 'androidx.test:rules:1.4.0'
-
-    // AndroidX JUnit extensions for UI testing
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-}
-
-// Configure test runner to enable androidx test rules
-android {
-    defaultConfig {
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-}

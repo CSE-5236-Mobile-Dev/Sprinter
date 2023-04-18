@@ -35,6 +35,7 @@ android {
 
 dependencies {
 
+    /* Device Code Dependencies */
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.8.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
@@ -44,19 +45,50 @@ dependencies {
     implementation 'com.google.android.gms:play-services-location:19.0.1'
     implementation 'com.google.maps.android:android-maps-utils:0.4+'
     implementation 'androidx.tracing:tracing:1.1.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
-    androidTestImplementation 'androidx.test:rules:1.4.1-alpha05'
-    
-    // Add the following dependencies for unit testing
-    testImplementation 'org.mockito:mockito-core:4.2.0'
-    testImplementation 'org.mockito:mockito-android:4.2.0'
-    testImplementation 'androidx.arch.core:core-testing:2.1.0'
 
     def room_version = "2.5.0"
 
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    /* Instrumented Test Dependencies */
+
+    androidTestImplementation 'androidx.test.ext:junit:1.2.0-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.0-alpha01'
+    androidTestImplementation 'androidx.test:rules:1.4.1-alpha05'
+
+
+    /* J-Unit Dependencies */
+
+    testImplementation 'junit:junit:4.13.2'
+
+    // Add the following dependencies for unit testing
+    testImplementation 'org.mockito:mockito-core:5.3.0'
+    //testImplementation 'org.mockito:mockito-android:5.3.0'
+    testImplementation 'androidx.arch.core:core-testing:2.1.0'
+
+    // AndroidX Test libraries
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'androidx.test:runner:1.4.0'
+    testImplementation 'androidx.test:rules:1.4.0'
+
+    // AndroidX JUnit extensions for UI testing
+    testImplementation 'androidx.test.ext:junit:1.1.3'
+
+    testImplementation 'androidx.test:core:1.4.0'
+    testImplementation 'androidx.test.ext:junit:1.1.3'
+
+    testImplementation "androidx.room:room-runtime:$room_version"
+    testImplementation "androidx.room:room-compiler:$room_version"
+
+    testImplementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'com.google.android.material:material:1.8.0'
+    testImplementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+
+    testImplementation 'com.google.android.gms:play-services-maps:18.1.0'
+
+    testImplementation 'com.google.android.gms:play-services-location:19.0.1'
+    testImplementation 'com.google.maps.android:android-maps-utils:0.4+'
+    testImplementation 'androidx.tracing:tracing:1.1.0'
 
 }

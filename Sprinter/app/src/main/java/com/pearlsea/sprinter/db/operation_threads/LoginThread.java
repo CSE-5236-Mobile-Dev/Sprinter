@@ -43,9 +43,20 @@ public class LoginThread extends Thread{
         }
         else
         {
-            DatabaseInstanceSingleton.activeUser = checkIfExist;
-            // User already exists - log them in
-            this.model.setStatus("Login Success", false);
+            String dBpass = checkIfExist.password;
+            String providedPass = "";
+            try {
+                providedPass = User.encrypt(this.password);
+            } catch (Exception e) {
+                this.model.setStatus("Failed to Encrypt Password", true);
+            }
+
+            if (providedPass.equals(dBpass)) {
+                DatabaseInstanceSingleton.activeUser = checkIfExist;
+                this.model.setStatus("Login Success", false);
+            } else {
+                this.model.setStatus("Incorrect Password", true);
+            }
         }
 
         Log.d("LoginThread", "DB Operation Completed");

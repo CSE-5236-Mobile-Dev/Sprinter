@@ -105,7 +105,7 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
     //region Map Helpers
     BitmapDescriptor locationIcon;
 
-    BitmapDescriptor getLocationIcon() {
+    public BitmapDescriptor getLocationIcon() {
         if (locationIcon != null) {
             return locationIcon;
         } else {
@@ -132,7 +132,7 @@ public class RunningFragment extends Fragment implements OnMapReadyCallback, Vie
     }
     List<RunPoint> currentRun = new ArrayList<RunPoint>();
 
-    List<LatLng> getPoints() {
+    public List<LatLng> getPoints() {
         List<LatLng> points = new ArrayList<>();
 
         for (RunPoint r : currentRun) {
